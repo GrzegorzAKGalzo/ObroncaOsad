@@ -1,0 +1,29 @@
+Zaliczenie na koniec semsetru grywalna gra
+
+Zaczęcie o 16:30-18:00
+
+Marek Wernikowski -> problemy programistyczne
+Maja -> problmey graficzne
+
+
+
+
+Koncept ->
+
+1. Autorzy, ->Lead= Oosba która jest nabradziej komunikatywna
+		Autorzy = rola (xyz -> level desing)
+2.Tytuł gry
+3.Opis świata gry
+3.Jaka gra (przygotówka,fps)
+4. Styl grafiki (low poly, real..)
+5 Bohaterowie (kto kim jak wyglad)
+6. N aczym rozgrywka w grze
+7. Opisanie leveli- > na czym polega co zrobić jak ukonczyc jak wyglada zakonczenie gry(Liczy się jakoś niż ilość leveli)
+8.Środowksko gry (unreal, unity ,)
+9. Za pomocą czego kontrolujemy gre, mysz, klawka...
+10. innowacyjność co w naszej grze jest czego nie ma  w innych
+
+
+kwestia gotowych assetow mozna wykorzytsac -> darmowa licencja komercyjna 
+
+
