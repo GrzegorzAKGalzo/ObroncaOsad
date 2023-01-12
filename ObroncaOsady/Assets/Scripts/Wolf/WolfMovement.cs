@@ -16,7 +16,7 @@ public class WolfMovement : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         wolfDetection = GetComponent<WolfDetection>();
-        wolfDetection.OnAggro += WolfDetection_OnAggro;
+        wolfDetection.OnAggro += WolfDetection_OnAggro; 
         m_Animator = GetComponent<Animator>();
     }
 
