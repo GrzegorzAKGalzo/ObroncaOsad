@@ -6,8 +6,9 @@ public class WolfAttack : MonoBehaviour
 {
 
     private bool isAttacking;
-    private Transform target;
+    public Transform target;
     Animator m_Animator;
+    public TakingDamage player;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -15,14 +16,20 @@ public class WolfAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update2()
+    private void Update()
     {
        // var pos = GameObject.Find(m_Animator).transform.position;
-        Vector3 maxDistance = new Vector3(10.0f, 10.0f, 10.0f);
-        if (maxDistance.x < m_Animator.transform.position.x - target.transform.position.x && maxDistance.y < m_Animator.transform.position.y - target.transform.position.y)
+        Vector3 maxDistance = new Vector3(1.7f, 1.7f, 1.7f);
+    
+       // Debug.Log(transform.position);
+       // Debug.Log(target.transform.position);
+        if (Mathf.Abs(maxDistance.x) > Mathf.Abs(transform.position.x - target.transform.position.x) && maxDistance.y > Mathf.Abs(transform.position.y - target.transform.position.y))
         {
+            Debug.Log("Test");
             m_Animator.SetBool("IsAttacking", true);
-            
+            player.PlayerTakeDamage(100);
+
+
         }
     }
 }

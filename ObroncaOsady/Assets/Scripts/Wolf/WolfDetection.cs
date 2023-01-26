@@ -11,7 +11,7 @@ public class WolfDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var player = other.GetComponent<playerMovement>();
+        var player = other.GetComponent<SoldierMovement>();
 
         if (player != null)
         {
