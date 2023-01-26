@@ -16,7 +16,8 @@ public class playerMovement : MonoBehaviour
     public mouseLook kamera;
      Vector3 velocity;
     private bool inventoryOpend = false;
-    bool isGrouded; 
+    bool isGrouded;
+    public AudioSource backpackSource;
     // Update is called once per frame
     void Update()
     {
@@ -60,5 +61,6 @@ public class playerMovement : MonoBehaviour
         Cursor.visible = inventoryOpend;
         kamera.enabled = !inventoryOpend;
         Cursor.lockState = CursorLockMode.Confined;
+        backpackSource.Play();
     }
 }
