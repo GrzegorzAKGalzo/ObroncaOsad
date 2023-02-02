@@ -6,16 +6,19 @@ public class SoldierMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
     public float moveSpeed = 20f;
+
     Animator m_Animator;
     Rigidbody m_Rigidbody;
     bool isShooting;
     bool isRunning;
-
+    AudioSource gun;
+  
     // Start is called before the first frame update
     void Start()
     {
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        gun = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class SoldierMovement : MonoBehaviour
         {
             if (vertical > 0)
             {
+
                 isRunning = true;
                 isShooting = false;
                 m_Animator.SetBool("IsShooting", isShooting);
@@ -59,6 +63,7 @@ public class SoldierMovement : MonoBehaviour
         {
             isShooting = true;
             m_Animator.SetBool("IsShooting", isShooting);
+            gun.Play();
         }
         else
         {
