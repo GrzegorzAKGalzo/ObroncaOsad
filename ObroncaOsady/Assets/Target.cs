@@ -6,6 +6,7 @@ public class Target : MonoBehaviour
 {
 
 	public float health = 100;
+	Animator m_Animator;
 	public void TakeDamage(float amount)
 	{
 		health -= amount;
@@ -14,8 +15,17 @@ public class Target : MonoBehaviour
 			Die();
 		}
 	}
+
+
 	void Die()
 	{
+		m_Animator.SetBool("IsDying", true);
+		StartCoroutine(WaitForDieAnimation());
+	}
+
+	IEnumerator WaitForDieAnimation()
+    {
+		yield return new WaitForSeconds(2.0f);
 		Destroy(gameObject);
 	}
 }

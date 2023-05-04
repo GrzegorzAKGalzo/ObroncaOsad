@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +26,7 @@ public class WolfAttack : MonoBehaviour
        // Debug.Log(target.transform.position);
         if (Mathf.Abs(maxDistance.x) > Mathf.Abs(transform.position.x - target.transform.position.x) && maxDistance.y > Mathf.Abs(transform.position.y - target.transform.position.y))
         {
-            Debug.Log("Test");
+            //Debug.Log("Test");
             m_Animator.SetBool("IsAttacking", true);
             timer += Time.deltaTime;
             float attackSpeed = 3.0f;
@@ -34,7 +34,7 @@ public class WolfAttack : MonoBehaviour
             {
                
                     timer = 0f;
-                    player.PlayerTakeDamage(100);
+                    //player.PlayerTakeDamage(100);
 
             }
          
