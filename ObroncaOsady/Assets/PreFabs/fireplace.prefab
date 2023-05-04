@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8505297331828861137}
   - component: {fileID: 1150022421175197263}
   - component: {fileID: 8859634518361735824}
+  - component: {fileID: 5098083172514511298}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -95,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1473214ad17c3dd47bb425cf69ccb319, type: 2}
+  - {fileID: 2100000, guid: 78632542c9e3fdd4f9e9dbc2bd38094c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,6 +118,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5098083172514511298
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656414201392850491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: fce61e1d55e3dc74cbe3616340c26510, type: 3}
 --- !u!1 &8595918865496005215
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +143,7 @@ GameObject:
   - component: {fileID: 1858096281864097390}
   - component: {fileID: 1120147949901753370}
   - component: {fileID: 2738301315793642112}
+  - component: {fileID: 589512432326360886}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -143,8 +159,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8595918865496005215}
   m_LocalRotation: {x: -0.38268346, y: 6.0084845e-17, z: -6.0084845e-17, w: 0.9238795}
-  m_LocalPosition: {x: -1.4276085, y: 0, z: 0.71075547}
-  m_LocalScale: {x: 2.7757146, y: 2.7757146, z: 2.7757146}
+  m_LocalPosition: {x: -1.4276086, y: 0, z: 0.7107554}
+  m_LocalScale: {x: 2.7757146, y: 2.7757154, z: 2.7757154}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4789934781343314868}
@@ -178,7 +194,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1473214ad17c3dd47bb425cf69ccb319, type: 2}
+  - {fileID: 2100000, guid: 78632542c9e3fdd4f9e9dbc2bd38094c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -200,6 +216,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &589512432326360886
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595918865496005215}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: fce61e1d55e3dc74cbe3616340c26510, type: 3}
 --- !u!1 &9009939052049076541
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +241,7 @@ GameObject:
   - component: {fileID: 1685711719276205742}
   - component: {fileID: 7310186544018919062}
   - component: {fileID: 1847162171961478445}
+  - component: {fileID: 5316169973727470911}
   m_Layer: 0
   m_Name: Icosphere
   m_TagString: Untagged
@@ -261,7 +292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1473214ad17c3dd47bb425cf69ccb319, type: 2}
+  - {fileID: 2100000, guid: 78632542c9e3fdd4f9e9dbc2bd38094c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -283,3 +314,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5316169973727470911
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9009939052049076541}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 289301614986012343, guid: fce61e1d55e3dc74cbe3616340c26510, type: 3}

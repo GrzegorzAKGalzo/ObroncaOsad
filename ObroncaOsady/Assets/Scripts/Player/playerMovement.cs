@@ -13,9 +13,11 @@ public class playerMovement : MonoBehaviour
     public float jumpHeight = 3f;
     public float sprint = 1f;
     public Canvas backpack;
+    public Canvas builidng;
     public mouseLook kamera;
      Vector3 velocity;
     private bool inventoryOpend = false;
+    private bool buildingOpend = false;
     bool isGrouded;
     public AudioSource backpackSource;
     // Update is called once per frame
@@ -35,9 +37,13 @@ public class playerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            backpack.enabled = !backpack.enabled;
-            inventoryOpend = !inventoryOpend;
+
             inventory();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+            building();
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -58,8 +64,19 @@ public class playerMovement : MonoBehaviour
 
     void inventory()
     {
+        backpack.enabled = !backpack.enabled;
+        inventoryOpend = !inventoryOpend;
         Cursor.visible = inventoryOpend;
         kamera.enabled = !inventoryOpend;
+        Cursor.lockState = CursorLockMode.Confined;
+        backpackSource.Play();
+    }
+    public void building()
+    {
+        builidng.enabled = !builidng.enabled;
+        buildingOpend = !buildingOpend;
+        Cursor.visible = buildingOpend;
+        kamera.enabled = !buildingOpend;
         Cursor.lockState = CursorLockMode.Confined;
         backpackSource.Play();
     }
