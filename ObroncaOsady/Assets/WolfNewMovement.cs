@@ -68,7 +68,7 @@ public class WolfNewMovement : MonoBehaviour
             if (System.Math.Abs(2) > System.Math.Abs(transform.position.x - player.transform.position.x) && 2 > System.Math.Abs(transform.position.z - player.transform.position.z)) playerInAttackRange = true;
             else playerInAttackRange = false;
         }
-        Debug.Log(run);
+        //Debug.Log(run);
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
@@ -76,7 +76,7 @@ public class WolfNewMovement : MonoBehaviour
 
     private void Patroling()
     {
-        Debug.Log("Patroling");
+        //Debug.Log("Patroling");
         if (!walkPointSet)
         {
             timer += Time.deltaTime;
@@ -90,7 +90,7 @@ public class WolfNewMovement : MonoBehaviour
 
         if (walkPointSet)
         {
-            Debug.Log("Should Run");
+            //Debug.Log("Should Run");
             run = true;
             m_Animator.SetBool("IsRunning", run);
             agent.SetDestination(walkPoint);
@@ -101,7 +101,7 @@ public class WolfNewMovement : MonoBehaviour
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 2f && walkPointSet)
         {
-            Debug.Log("Reached Point");
+            //Debug.Log("Reached Point");
             walkPointSet = false;
             run = false;
             m_Animator.SetBool("IsRunning", run);
@@ -116,7 +116,7 @@ public class WolfNewMovement : MonoBehaviour
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
         walkPointSet = true;
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            Debug.Log("WalkPointIsTrue");
+            //Debug.Log("WalkPointIsTrue");
             walkPointSet = true;
     }
 
@@ -142,7 +142,7 @@ public class WolfNewMovement : MonoBehaviour
         timerattack += Time.deltaTime;
         if (timerattack>=attackSpeed)
         {
-            Debug.Log("Attack");
+            //Debug.Log("Attack");
             m_Animator.SetTrigger("IsAttacking");
             timerattack = 0f;
             //player.PlayerTakeDamage(100);
@@ -158,7 +158,7 @@ public class WolfNewMovement : MonoBehaviour
     }
     private void DestroyEnemy()
     {
-       // Destroy(gameObject);
+        Destroy(gameObject);
     }
     /*
     private void OnDrawGizmosSelected()

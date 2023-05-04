@@ -28,19 +28,23 @@ public class WeaponController : MonoBehaviour
         //Debug.Log("Animation trigger");
         anim.SetTrigger("isAttackingAnimation");
         StartCoroutine(ResetAttackCooldown());
+        Invoke("changeAttack", 0.3f);
     }
-
+    void changeAttack()
+    {
+        isAttacking = !isAttacking;
+    }
     IEnumerator ResetAttackCooldown()
     {
         StartCoroutine(ResetAttackBool());
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
+
     }
 
     IEnumerator ResetAttackBool()
     {
         yield return new WaitForSeconds(0.3f);
-        isAttacking = false;
     }
 
 }

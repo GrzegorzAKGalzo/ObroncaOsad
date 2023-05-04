@@ -1043,7 +1043,7 @@ MonoBehaviour:
         m_MethodName: setObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7702246092418294755, guid: 8c0765882a080904b83d46ef74b5766a, type: 3}
+          m_ObjectArgument: {fileID: 6081089819585136791, guid: 65cfce7b28f4af94282f7cd24874f513, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
