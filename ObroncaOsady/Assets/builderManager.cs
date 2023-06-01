@@ -8,6 +8,8 @@ public class builderManager : MonoBehaviour
     RaycastHit hit;
     float distance = 100f;
     Vector3 targetLocation;
+    Vector3 targetNormal;
+    float Rotation = 0f;
     GameObject prefab;
     GameObject tempGun;
     [SerializeField]
@@ -29,13 +31,15 @@ public class builderManager : MonoBehaviour
 
         if (Input.GetKeyDown("f"))
         {
-            tempGun = (GameObject)Instantiate(prefab, targetLocation, Quaternion.Euler(0, 0, 180f));
+
+            tempGun = (GameObject)Instantiate(prefab, targetLocation, prefab.transform.rotation);
             //Instantiate(prefab, targetLocation, Quaternion.Euler(0, 0, 180f));
             org = tempGun.GetComponent<MeshRenderer>().material;
-            tempGun.transform.Rotate(new Vector3(90f, 0, 0));
+            //tempGun.transform.Rotate(new Vector3(90f, 0, 0));
             tempGun.GetComponent<MeshCollider>().enabled = false;
             Debug.Log("Open Menu");
             holdingObject = true;
+
         }
 
 
@@ -43,20 +47,24 @@ public class builderManager : MonoBehaviour
         if (Physics.Raycast(ray.origin, Camera.main.transform.forward, out hit, distance))
         {
             targetLocation = hit.point;
+            targetNormal = hit.normal;
             Debug.Log(targetLocation);
         }
-
+        
 
 
 
         if (holdingObject)
         {
             tempGun.GetComponent<MeshRenderer>().material = bad;
+            tempGun.transform.position = targetLocation;
+            tempGun.transform.rotation = Quaternion.FromToRotation(Vector3.up, targetNormal);
+            tempGun.transform.Rotate(new Vector3(0f, Rotation, 0f));
             if (Vector3.Distance(tempGun.transform.position, transform.position ) < 10)
             {
                 tempGun.GetComponent<MeshRenderer>().material = good;
             }
-                tempGun.transform.position = targetLocation;
+                
             if (Input.GetKeyDown(KeyCode.Mouse0) && Vector3.Distance(tempGun.transform.position, transform.position) < 10)
             {
                 holdingObject = false;
@@ -65,7 +73,7 @@ public class builderManager : MonoBehaviour
             }
             if (Input.GetKey("r"))
             {
-                tempGun.transform.Rotate(new Vector3(0f, 0f, 1f));
+                Rotation++;
             }
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
