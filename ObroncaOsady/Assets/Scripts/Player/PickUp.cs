@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+    public playerMovement backpack;
     private void OnCollisionTonEnter(Collision collision)
     {
         Debug.Log("You have picked up " + collision.gameObject.name);
@@ -11,9 +12,14 @@ public class PickUp : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 7)
+        if(other.gameObject.tag == "rock")
         {
-            Debug.Log(other.gameObject.name);
+            backpack.addItem("rock");
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "wood")
+        {
+            backpack.addItem("wood");
             Destroy(other.gameObject);
         }
     }

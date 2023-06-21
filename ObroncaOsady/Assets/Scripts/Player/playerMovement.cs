@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class playerMovement : MonoBehaviour
 {
     public CharacterController controller;
@@ -20,6 +21,12 @@ public class playerMovement : MonoBehaviour
     private bool buildingOpend = false;
     bool isGrouded;
     public AudioSource backpackSource;
+
+    public int wood = 0;
+    public int stones = 0;
+
+    public TMP_Text woodNumber;
+    public TMP_Text stoneNumber;
     // Update is called once per frame
     void Update()
     {
@@ -59,6 +66,10 @@ public class playerMovement : MonoBehaviour
         velocity.y += gravity * 3 * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+
+
+        woodNumber.text = wood.ToString();
+        stoneNumber.text = stones.ToString();
     }
 
 
@@ -79,5 +90,16 @@ public class playerMovement : MonoBehaviour
         kamera.enabled = !buildingOpend;
         Cursor.lockState = CursorLockMode.Confined;
         backpackSource.Play();
+    }
+    public void addItem(string _item)
+    {
+        if (_item == "wood")
+        {
+            wood = wood + 3;
+        }
+        if (_item == "rock")
+        {
+            stones++;
+        }
     }
 }
