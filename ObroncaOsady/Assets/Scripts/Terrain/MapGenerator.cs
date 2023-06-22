@@ -120,7 +120,6 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
-
     // This method is called when the script is loaded
     MapData GenerateMapData(Vector2 centre) {
         float[,] noiseMap = Noise.GenerateNoiseMap(mapChunkSize + 2, mapChunkSize + 2, seed, scale, octaves, persistance, lacunarity, centre+offset, normalizeMode); // This is the noise map

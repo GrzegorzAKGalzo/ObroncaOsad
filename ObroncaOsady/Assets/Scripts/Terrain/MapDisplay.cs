@@ -7,7 +7,7 @@ public class MapDisplay : MonoBehaviour
     public Renderer textureRender; // This is the renderer for the texture
     public MeshFilter meshFilter; // This is the mesh filter
     public MeshRenderer meshRenderer; // This is the mesh renderer
-
+    public MeshCollider meshCollider;
     // This method is used to draw a noise map
     public void DrawTexture(Texture2D texture) {
         
@@ -20,5 +20,6 @@ public class MapDisplay : MonoBehaviour
     public void DrawMesh(MeshData meshData, Texture2D texture) {
         meshFilter.sharedMesh = meshData.CreateMesh(); // Set the mesh of the mesh filter
         meshRenderer.sharedMaterial.mainTexture = texture; // Set the texture of the mesh renderer
+        meshCollider.sharedMesh = meshFilter.sharedMesh;
     }
 }
