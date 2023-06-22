@@ -7,7 +7,7 @@ public class WeaponController : MonoBehaviour
     public GameObject Sword;
     public bool canAttack=true;
     public float attackCooldown = 0.3f;
-    public AudioClip swordAttacksound;
+    public AudioSource swordAttacksound;
     public bool isAttacking = false;
     void Update()
     {
@@ -29,6 +29,7 @@ public class WeaponController : MonoBehaviour
         anim.SetTrigger("isAttackingAnimation");
         StartCoroutine(ResetAttackCooldown());
         Invoke("changeAttack", 0.3f);
+        swordAttacksound.Play();
     }
     void changeAttack()
     {

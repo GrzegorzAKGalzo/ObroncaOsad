@@ -21,6 +21,7 @@ public class playerMovement : MonoBehaviour
     private bool buildingOpend = false;
     bool isGrouded;
     public AudioSource backpackSource;
+    public AudioSource walkSource;
 
     public int wood = 0;
     public int stones = 0;
@@ -30,9 +31,11 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         isGrouded = Physics.CheckSphere(groundCheck.position, groundDistance, groudnMask);
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
+            
             sprint = 1.9f;
         } else
         {
@@ -54,7 +57,14 @@ public class playerMovement : MonoBehaviour
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
+        if (x != 0 || z != 0)
+        {
+            
+        }
+        else
+        {
+            walkSource.Play();
+        }
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime * sprint);

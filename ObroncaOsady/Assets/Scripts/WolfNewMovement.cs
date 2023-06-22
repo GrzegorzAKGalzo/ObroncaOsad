@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System;
-
+using TMPro;
 public class WolfNewMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
@@ -41,7 +41,10 @@ public class WolfNewMovement : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange=false, playerInAttackRange=false;
+    public TMP_Text helth;
 
+
+    public AudioSource deathSound;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Friendly")
@@ -60,6 +63,7 @@ public class WolfNewMovement : MonoBehaviour
 
     private void Update()
     {
+
         //Check for sight and attack range
         if (player != null)
         {
@@ -72,6 +76,8 @@ public class WolfNewMovement : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
+
+        helth.text = health.ToString();
     }
 
     private void Patroling()
@@ -145,7 +151,7 @@ public class WolfNewMovement : MonoBehaviour
             //Debug.Log("Attack");
             m_Animator.SetTrigger("IsAttacking");
             timerattack = 0f;
-            //player.PlayerTakeDamage(100);
+            player.gameObject.GetComponent<healthManager>().takeDamge(20);
         }
     }
 
@@ -154,7 +160,11 @@ public class WolfNewMovement : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        if (health <= 0)
+        {
+            deathSound.Play();
+            Invoke(nameof(DestroyEnemy), 0.5f);
+        }
     }
     private void DestroyEnemy()
     {
