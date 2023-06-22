@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - EnemyDetector
+  - Friendly
+  - Tree
+  - rock
+  - wood
   layers:
   - Default
   - TransparentFX

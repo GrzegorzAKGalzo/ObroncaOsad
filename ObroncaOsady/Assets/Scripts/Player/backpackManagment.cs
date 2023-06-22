@@ -8,10 +8,29 @@ public class backpackManagment : MonoBehaviour
     public AudioSource backpackSource;
     bool inventoryOpend = false;
     public Canvas backpack;
+    public int wood = 0;
+    public int stones = 0;
+
+    public Text woodNumber;
+    public Text stoneNumber;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)){
             inventory();
+        }
+        woodNumber.text = wood.ToString();
+        stoneNumber.text = stones.ToString();
+    }
+
+    public void addItem(string _item)
+    {
+        if(_item == "wood")
+        {
+            wood = wood + 3;
+        }
+        if(_item == "rock")
+        {
+            stones++;
         }
     }
     void inventory()

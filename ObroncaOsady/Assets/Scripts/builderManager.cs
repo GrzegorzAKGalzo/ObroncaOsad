@@ -48,7 +48,6 @@ public class builderManager : MonoBehaviour
         {
             targetLocation = hit.point;
             targetNormal = hit.normal;
-            Debug.Log(targetLocation);
         }
         
 
